@@ -1,0 +1,17 @@
+{
+  "name": "nexus-ecommerce",
+  "version": "1.0.0",
+  "description": "Modern full-stack e-commerce application built with Node.js, Express, and Vanilla JavaScript",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": ["ecommerce", "nodejs", "express", "javascript", "store"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}

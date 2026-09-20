@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXUS - Next-Gen Tech & Lifestyle Store</title>
+  <meta name="description" content="Discover premium audio, cutting-edge wearables, and intelligent home gadgets with instant shipping and 2-year warranty at NEXUS.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar" id="announcement-bar">
+    <div class="announcement-content">
+      <span>⚡ Spring Tech Drop: Use code <strong class="promo-pill" id="copy-promo-banner" title="Click to copy">SAVE20</strong> for 20% off all flagship gear!</span>
+      <span class="announcement-divider">•</span>
+      <span>Free worldwide express delivery on orders over $100</span>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="main-navbar">
+    <div class="nav-container">
+      <!-- Logo -->
+      <a href="#" class="nav-brand" id="brand-logo">
+        <div class="logo-mark">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+        </div>
+        <span class="logo-text">NEXUS</span>
+        <span class="logo-badge">PRO</span>
+      </a>
+
+      <!-- Search Input -->
+      <div class="nav-search-wrap">
+        <div class="search-box">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="global-search-input" placeholder="Search gadgets, audio, wearables..." autocomplete="off">
+          <button id="search-clear-btn" class="search-clear-btn hidden" aria-label="Clear search">&times;</button>
+          <span class="search-shortcut">/</span>
+        </div>
+      </div>
+
+      <!-- Action Items -->
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button id="theme-toggle-btn" class="nav-icon-btn" aria-label="Toggle theme" title="Toggle Light/Dark Theme">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Order History Button -->
+        <button id="order-history-btn" class="nav-icon-btn" aria-label="Order History" title="Track & View Orders">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="btn-text-hide">Orders</span>
+        </button>
+
+        <!-- Wishlist Button -->
+        <button id="wishlist-btn" class="nav-icon-btn" aria-label="Wishlist" title="View Wishlist">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span id="wishlist-badge" class="badge-counter hidden">0</span>
+        </button>
+
+        <!-- Cart Button -->
+        <button id="cart-btn" class="nav-cart-btn" aria-label="Shopping Cart">
+          <div class="cart-icon-wrap">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            <span id="cart-badge" class="cart-badge">0</span>
+          </div>
+          <div class="cart-btn-info">
+            <span class="cart-btn-label">Cart</span>
+            <span id="cart-btn-total" class="cart-btn-amount">$0.00</span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-tag">
+          <span class="pulse-dot"></span>
+          <span>Next-Generation Hardware 2026</span>
+        </div>
+        <h1 class="hero-title">
+          Elevate Your Daily <br><span class="gradient-text">Tech & Lifestyle</span> Experience.
+        </h1>
+        <p class="hero-subtitle">
+          Engineered for creators, audiophiles, and forward-thinkers. Precision acoustics, titanium wearables, and ambient intelligent living accessories.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#catalog" class="btn btn-primary btn-lg" id="explore-btn">
+            <span>Explore Catalog</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <button class="btn btn-secondary btn-lg" id="promo-hero-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+            <span>Apply 20% Coupon</span>
+          </button>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-val">100%</span>
+            <span class="stat-lbl">Authentic Gear</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-val">4.9 ★</span>
+            <span class="stat-lbl">20K+ Reviews</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-val">2 Years</span>
+            <span class="stat-lbl">Global Warranty</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-card-glass">
+          <div class="featured-badge">Spotlight Product</div>
+          <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80" alt="AuraSound Apex Pro" class="hero-product-img">
+          <div class="hero-card-info">
+            <div class="hero-card-header">
+              <div>
+                <h3 class="hero-card-title">AuraSound Apex Pro</h3>
+                <span class="hero-card-cat">Studio Active Noise Cancellation</span>
+              </div>
+              <div class="hero-card-price">$249.99</div>
+            </div>
+            <button class="btn btn-primary btn-sm btn-full" id="hero-quick-add-btn">
+              Quick Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Strip -->
+  <section class="trust-strip">
+    <div class="container trust-grid">
+      <div class="trust-card">
+        <div class="trust-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1" y="3" width="15" height="13"></rect>
+            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+            <circle cx="5.5" cy="18.5" r="2.5"></circle>
+            <circle cx="18.5" cy="18.5" r="2.5"></circle>
+          </svg>
+        </div>
+        <div>
+          <h4>Express Free Shipping</h4>
+          <p>Complimentary delivery on all orders over $100</p>
+        </div>
+      </div>
+
+      <div class="trust-card">
+        <div class="trust-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        </div>
+        <div>
+          <h4>2-Year Extended Shield</h4>
+          <p>Full hardware replacement warranty included</p>
+        </div>
+      </div>
+
+      <div class="trust-card">
+        <div class="trust-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="23 4 23 10 17 10"></polyline>
+            <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+          </svg>
+        </div>
+        <div>
+          <h4>30-Day Risk-Free Trial</h4>
+          <p>Zero hassle return policy with instant refunds</p>
+        </div>
+      </div>
+
+      <div class="trust-card">
+        <div class="trust-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+        </div>
+        <div>
+          <h4>Encrypted Checkout</h4>
+          <p>End-to-end 256-bit bank grade security</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Catalog Section -->
+  <main class="catalog-section" id="catalog">
+    <div class="container">
+
+      <!-- Catalog Header & Controls -->
+      <div class="catalog-header">
+        <div>
+          <h2 class="section-title">Curated Hardware Collection</h2>
+          <p class="section-subtitle">Engineered components & designer lifestyle peripherals</p>
+        </div>
+
+        <!-- Filter Controls Bar -->
+        <div class="filter-controls">
+          <!-- Price Range Slider -->
+          <div class="price-filter-wrap">
+            <label for="price-range">Max Price: <span id="price-value" class="price-val-indicator">$700</span></label>
+            <input type="range" id="price-range" min="30" max="700" step="10" value="700">
+          </div>
+
+          <!-- Sort Selector -->
+          <div class="sort-wrap">
+            <label for="sort-select">Sort by:</label>
+            <select id="sort-select" class="custom-select">
+              <option value="featured">Featured / Trending</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="rating-desc">Highest Customer Rating</option>
+              <option value="popular">Most Popular</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="category-tabs-container">
+        <div class="category-tabs" id="category-tabs">
+          <!-- Dynamically populated categories -->
+          <button class="cat-pill active" data-category="All">All Items (12)</button>
+        </div>
+      </div>
+
+      <!-- Active Filters Display -->
+      <div class="active-filters-bar hidden" id="active-filters-bar">
+        <span class="active-filters-label">Active filters:</span>
+        <div class="active-filter-chips" id="active-filter-chips"></div>
+        <button id="clear-all-filters-btn" class="clear-filters-btn">Reset All</button>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="products-grid" id="products-grid">
+        <!-- Injected via JavaScript -->
+        <div class="loading-state">
+          <div class="spinner"></div>
+          <p>Loading flagship products...</p>
+        </div>
+      </div>
+
+      <!-- Empty State -->
+      <div class="empty-state hidden" id="empty-state">
+        <div class="empty-icon">🔍</div>
+        <h3>No matching products found</h3>
+        <p>Try clearing some filters or searching for another keyword.</p>
+        <button class="btn btn-secondary" id="empty-reset-btn">Reset Filters</button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Quick View Modal -->
+  <div class="modal-overlay hidden" id="quick-view-modal">
+    <div class="modal-card quick-view-card">
+      <button class="modal-close-btn" id="quick-view-close">&times;</button>
+      <div class="quick-view-grid">
+        <div class="quick-view-media">
+          <img src="" alt="" id="qv-image" class="quick-view-img">
+          <span class="qv-badge" id="qv-badge">Badge</span>
+        </div>
+        <div class="quick-view-details">
+          <div class="qv-meta">
+            <span class="qv-category" id="qv-category">Category</span>
+            <div class="qv-rating">
+              <span class="stars">★★★★★</span>
+              <span id="qv-rating-text">4.9</span>
+              <span class="qv-reviews" id="qv-reviews">(120 reviews)</span>
+            </div>
+          </div>
+
+          <h2 class="qv-title" id="qv-title">Product Title</h2>
+
+          <div class="qv-pricing">
+            <span class="qv-price" id="qv-price">$199.99</span>
+            <span class="qv-original-price" id="qv-original-price">$249.99</span>
+            <span class="qv-savings" id="qv-savings">Save $50</span>
+          </div>
+
+          <p class="qv-desc" id="qv-desc">Product detailed description here.</p>
+
+          <div class="qv-features">
+            <h4>Key Highlights:</h4>
+            <ul id="qv-features-list"></ul>
+          </div>
+
+          <div class="qv-stock-status" id="qv-stock-status">
+            <span class="stock-dot in-stock"></span>
+            <span id="qv-stock-text">In Stock • Ready to ship</span>
+          </div>
+
+          <div class="qv-actions">
+            <div class="quantity-picker">
+              <button class="qty-btn" id="qv-qty-minus">-</button>
+              <input type="number" id="qv-qty-input" value="1" min="1" max="99" readonly>
+              <button class="qty-btn" id="qv-qty-plus">+</button>
+            </div>
+            <button class="btn btn-primary btn-lg flex-1" id="qv-add-to-cart-btn">
+              Add to Shopping Cart
+            </button>
+            <button class="nav-icon-btn btn-wishlist-qv" id="qv-wishlist-toggle" title="Add to Wishlist">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Slide-Over Drawer -->
+  <div class="drawer-backdrop hidden" id="cart-drawer-backdrop"></div>
+  <aside class="cart-drawer" id="cart-drawer">
+    <div class="drawer-header">
+      <div class="drawer-header-left">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <h3>Your Cart (<span id="drawer-cart-count">0</span>)</h3>
+      </div>
+      <button class="drawer-close-btn" id="cart-drawer-close">&times;</button>
+    </div>
+
+    <!-- Free Shipping Progress Tracker -->
+    <div class="shipping-tracker-card">
+      <div class="shipping-tracker-label">
+        <span id="shipping-tracker-msg">Add $100.00 for FREE Shipping!</span>
+        <span class="shipping-tracker-icon">🚚</span>
+      </div>
+      <div class="shipping-progress-bar">
+        <div class="shipping-progress-fill" id="shipping-progress-fill" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <!-- Cart Items Scroll List -->
+    <div class="drawer-items" id="drawer-items">
+      <!-- Items dynamically rendered -->
+      <div class="cart-empty-message">
+        <div class="cart-empty-art">🛍️</div>
+        <h4>Your cart is empty</h4>
+        <p>Explore our trending catalog and add items you love.</p>
+        <button class="btn btn-secondary btn-sm" id="cart-empty-shop-btn">Browse Products</button>
+      </div>
+    </div>
+
+    <!-- Cart Footer & Checkout Action -->
+    <div class="drawer-footer" id="drawer-footer">
+      <!-- Coupon Code Form -->
+      <div class="coupon-box">
+        <input type="text" id="coupon-input" placeholder="Promo code (Try: SAVE20)" autocomplete="off">
+        <button id="apply-coupon-btn" class="btn btn-secondary btn-sm">Apply</button>
+      </div>
+      <div class="coupon-feedback hidden" id="coupon-feedback"></div>
+
+      <!-- Cost Breakdown -->
+      <div class="price-breakdown">
+        <div class="price-row">
+          <span>Subtotal</span>
+          <span id="drawer-subtotal">$0.00</span>
+        </div>
+        <div class="price-row discount-row hidden" id="drawer-discount-row">
+          <span>Discount (<span id="drawer-discount-label">0%</span>)</span>
+          <span id="drawer-discount-amount">-$0.00</span>
+        </div>
+        <div class="price-row">
+          <span>Estimated Shipping</span>
+          <span id="drawer-shipping">Free</span>
+        </div>
+        <div class="price-row">
+          <span>Estimated Tax (8%)</span>
+          <span id="drawer-tax">$0.00</span>
+        </div>
+        <div class="price-row grand-total">
+          <span>Total</span>
+          <span id="drawer-grand-total">$0.00</span>
+        </div>
+      </div>
+
+      <button class="btn btn-primary btn-lg btn-full" id="checkout-trigger-btn">
+        <span>Proceed to Checkout</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Checkout Multi-Step Modal -->
+  <div class="modal-overlay hidden" id="checkout-modal">
+    <div class="modal-card checkout-card">
+      <button class="modal-close-btn" id="checkout-close">&times;</button>
+
+      <div class="checkout-header">
+        <h2>Secure Instant Checkout</h2>
+        <div class="checkout-stepper">
+          <div class="step active" id="step-ind-1">
+            <span class="step-num">1</span>
+            <span class="step-lbl">Shipping</span>
+          </div>
+          <div class="step-line"></div>
+          <div class="step" id="step-ind-2">
+            <span class="step-num">2</span>
+            <span class="step-lbl">Payment</span>
+          </div>
+          <div class="step-line"></div>
+          <div class="step" id="step-ind-3">
+            <span class="step-num">3</span>
+            <span class="step-lbl">Confirmation</span>
+          </div>
+        </div>
+      </div>
+
+      <form id="checkout-form">
+        <!-- Step 1: Shipping Details -->
+        <div class="checkout-step-content" id="checkout-step-1">
+          <h3 class="step-title">1. Shipping Information</h3>
+          <div class="form-grid">
+            <div class="form-group full-width">
+              <label for="cust-fullname">Full Name *</label>
+              <input type="text" id="cust-fullname" required placeholder="e.g. Alex Morgan">
+            </div>
+
+            <div class="form-group half-width">
+              <label for="cust-email">Email Address *</label>
+              <input type="email" id="cust-email" required placeholder="alex.morgan@example.com">
+            </div>
+
+            <div class="form-group half-width">
+              <label for="cust-phone">Mobile Phone</label>
+              <input type="tel" id="cust-phone" placeholder="+1 (555) 019-2834">
+            </div>
+
+            <div class="form-group full-width">
+              <label for="cust-address">Street Address *</label>
+              <input type="text" id="cust-address" required placeholder="742 Evergreen Terrace, Suite 10">
+            </div>
+
+            <div class="form-group half-width">
+              <label for="cust-city">City *</label>
+              <input type="text" id="cust-city" required placeholder="San Francisco">
+            </div>
+
+            <div class="form-group half-width">
+              <label for="cust-zip">Postal / Zip Code *</label>
+              <input type="text" id="cust-zip" required placeholder="94107">
+            </div>
+          </div>
+
+          <div class="checkout-actions">
+            <button type="button" class="btn btn-secondary" id="checkout-back-to-cart">Return to Cart</button>
+            <button type="button" class="btn btn-primary" id="goto-payment-btn">Continue to Payment</button>
+          </div>
+        </div>
+
+        <!-- Step 2: Payment Details -->
+        <div class="checkout-step-content hidden" id="checkout-step-2">
+          <h3 class="step-title">2. Payment Method</h3>
+          
+          <div class="payment-methods-tabs">
+            <label class="payment-tab active">
+              <input type="radio" name="paymentMethod" value="Credit Card" checked>
+              <span>💳 Credit / Debit Card</span>
+            </label>
+            <label class="payment-tab">
+              <input type="radio" name="paymentMethod" value="UPI / Instant Pay">
+              <span>⚡ UPI / Digital Wallet</span>
+            </label>
+            <label class="payment-tab">
+              <input type="radio" name="paymentMethod" value="Cash On Delivery">
+              <span>📦 Cash On Delivery</span>
+            </label>
+          </div>
+
+          <!-- Card Inputs Simulation -->
+          <div class="card-inputs-panel" id="card-panel">
+            <div class="form-group full-width">
+              <label for="card-number">Card Number</label>
+              <input type="text" id="card-number" placeholder="4242 •••• •••• 4242" maxlength="19">
+            </div>
+            <div class="form-grid">
+              <div class="form-group half-width">
+                <label for="card-exp">Expiry (MM/YY)</label>
+                <input type="text" id="card-exp" placeholder="12/28" maxlength="5">
+              </div>
+              <div class="form-group half-width">
+                <label for="card-cvv">CVV</label>
+                <input type="password" id="card-cvv" placeholder="•••" maxlength="4">
+              </div>
+            </div>
+          </div>
+
+          <!-- Order Summary Inside Payment -->
+          <div class="checkout-summary-box">
+            <div class="summary-line">
+              <span>Items Total:</span>
+              <strong id="chk-summary-subtotal">$0.00</strong>
+            </div>
+            <div class="summary-line discount-text" id="chk-summary-discount-row">
+              <span>Promo Discount:</span>
+              <strong id="chk-summary-discount">-$0.00</strong>
+            </div>
+            <div class="summary-line">
+              <span>Shipping & Tax:</span>
+              <strong id="chk-summary-ship-tax">$0.00</strong>
+            </div>
+            <div class="summary-line total-highlight">
+              <span>Grand Total:</span>
+              <strong id="chk-summary-total">$0.00</strong>
+            </div>
+          </div>
+
+          <div class="checkout-actions">
+            <button type="button" class="btn btn-secondary" id="back-to-shipping-btn">Back to Shipping</button>
+            <button type="submit" class="btn btn-primary btn-lg" id="place-order-submit-btn">
+              <span id="place-order-btn-text">Pay & Confirm Order</span>
+              <div class="spinner-sm hidden" id="place-order-spinner"></div>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Order Receipt & Success Modal -->
+  <div class="modal-overlay hidden" id="order-success-modal">
+    <div class="modal-card order-receipt-card">
+      <div class="order-success-header">
+        <div class="success-icon-anim">✓</div>
+        <h2>Payment Successful!</h2>
+        <p>Thank you for shopping at NEXUS. Your order has been registered.</p>
+      </div>
+
+      <div class="order-meta-box">
+        <div>
+          <span class="meta-lbl">Order Reference:</span>
+          <span class="meta-val" id="receipt-order-id">ORD-XXXXXX</span>
+        </div>
+        <div>
+          <span class="meta-lbl">Estimated Arrival:</span>
+          <span class="meta-val" id="receipt-delivery-date">Thursday, Oct 12</span>
+        </div>
+      </div>
+
+      <!-- Live Order Tracker Timeline -->
+      <div class="order-tracker">
+        <div class="tracker-step completed">
+          <div class="tracker-dot">✓</div>
+          <span class="tracker-text">Placed</span>
+        </div>
+        <div class="tracker-line completed"></div>
+        <div class="tracker-step completed">
+          <div class="tracker-dot">✓</div>
+          <span class="tracker-text">Confirmed</span>
+        </div>
+        <div class="tracker-line active"></div>
+        <div class="tracker-step active">
+          <div class="tracker-dot">⚡</div>
+          <span class="tracker-text">Processing</span>
+        </div>
+        <div class="tracker-line"></div>
+        <div class="tracker-step">
+          <div class="tracker-dot">🚚</div>
+          <span class="tracker-text">Dispatched</span>
+        </div>
+      </div>
+
+      <!-- Receipt Items Summary -->
+      <div class="receipt-items-container" id="receipt-items-list">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <!-- Receipt Totals -->
+      <div class="receipt-totals" id="receipt-totals-box"></div>
+
+      <div class="receipt-actions">
+        <button class="btn btn-secondary" id="print-receipt-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+          <span>Print Receipt</span>
+        </button>
+        <button class="btn btn-primary" id="continue-shopping-btn">Continue Shopping</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Orders History / Tracking Drawer/Modal -->
+  <div class="modal-overlay hidden" id="orders-history-modal">
+    <div class="modal-card orders-history-card">
+      <button class="modal-close-btn" id="orders-modal-close">&times;</button>
+      <div class="orders-history-header">
+        <div class="icon-wrap">📦</div>
+        <div>
+          <h2>Order History & Tracker</h2>
+          <p>Review and track your recent purchases</p>
+        </div>
+      </div>
+
+      <div class="orders-history-body" id="orders-history-list">
+        <!-- Dynamically loaded -->
+        <p class="loading-state">Fetching your orders from the server...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Center -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-col brand-col">
+        <div class="footer-logo">
+          <div class="logo-mark">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+          </div>
+          <span class="logo-text">NEXUS</span>
+        </div>
+        <p class="footer-desc">
+          Crafted with Node.js, Express, and Vanilla JavaScript. Fast, resilient, and responsive e-commerce architecture.
+        </p>
+        <div class="server-badge">
+          <span class="status-pulse"></span>
+          <span>Node.js REST API: Active on port 3000</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Catalog</h4>
+        <ul>
+          <li><a href="#catalog" class="footer-cat-link" data-cat="Audio">Acoustics & Audio</a></li>
+          <li><a href="#catalog" class="footer-cat-link" data-cat="Wearables">Smart Wearables</a></li>
+          <li><a href="#catalog" class="footer-cat-link" data-cat="Electronics">Keyboards & Gear</a></li>
+          <li><a href="#catalog" class="footer-cat-link" data-cat="Smart Home">Ambient Living</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Customer Care</h4>
+        <ul>
+          <li><a href="#orders" id="footer-track-orders-link">Track My Order</a></li>
+          <li><a href="#faq">Shipping & Logistics</a></li>
+          <li><a href="#warranty">Warranty & Repairs</a></li>
+          <li><a href="#returns">30-Day Returns</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p>Subscribe for secretive hardware drops & exclusive 20% vouchers.</p>
+        <form class="newsletter-form" id="newsletter-form" onsubmit="event.preventDefault(); window.NexusApp?.showToast('Subscribed to VIP hardware drops!', 'success');">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit" class="btn btn-primary btn-sm">Join</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-flex">
+        <span>© 2026 NEXUS Store Inc. Built for College Sem 5 Lab Demonstration. All rights reserved.</span>
+        <div class="footer-badges">
+          <span class="tag">Node.js v24</span>
+          <span class="tag">Express.js</span>
+          <span class="tag">Vanilla CSS3</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Logic -->
+  <script src="js/app.js"></script>
+</body>
+</html>

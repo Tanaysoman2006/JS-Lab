@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List App</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+    input { padding: 8px; width: 250px; }
+    button { padding: 8px 12px; margin: 5px; cursor: pointer; }
+    ul { list-style: none; padding: 0; width: min(400px, 90%); margin: auto; }
+    li { padding: 10px; margin: 5px; border: 1px solid #ccc; display: flex; justify-content: space-between; align-items: center; }
+  </style>
+</head>
+<body>
+  <h2>To-Do List Application</h2>
+  <input type="text" id="taskInput" placeholder="Enter a task">
+  <button onclick="addTask()">Add Task</button>
+  <ul id="taskList"></ul>
+  <script>
+    function addTask() {
+      let taskInput = document.getElementById('taskInput');
+      let taskText = taskInput.value.trim();
+      if (taskText === '') { alert('Please enter a task.'); return; }
+      let li = document.createElement('li');
+      let span = document.createElement('span');
+      span.textContent = taskText;
+      let editBtn = document.createElement('button');
+      editBtn.textContent = 'Edit';
+      editBtn.onclick = function () { let updatedTask = prompt('Edit Task:', span.textContent); if (updatedTask !== null && updatedTask.trim() !== '') span.textContent = updatedTask; };
+      let deleteBtn = document.createElement('button');
+      deleteBtn.textContent = 'Delete';
+      deleteBtn.onclick = function () { li.remove(); };
+      let buttonGroup = document.createElement('div');
+      buttonGroup.append(editBtn, deleteBtn);
+      li.append(span, buttonGroup);
+      document.getElementById('taskList').appendChild(li);
+      taskInput.value = '';
+    }
+  </script>
+</body>
+</html>

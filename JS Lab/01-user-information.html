@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Information Portal</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: linear-gradient(135deg, #4facfe, #00f2fe); margin: 0; padding: 0; }
+    .container { width: min(450px, calc(100% - 40px)); margin: 60px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,.2); text-align: center; }
+    h1 { color: #0077cc; }
+    .info { text-align: left; margin-top: 20px; line-height: 1.8; font-size: 18px; }
+    .welcome { margin-top: 20px; color: green; font-size: 20px; font-weight: bold; }
+    button { background: #0077cc; color: white; border: 0; padding: 12px 25px; border-radius: 8px; font-size: 16px; cursor: pointer; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>User Information Portal</h1>
+    <div class="info">
+      <p><strong>Name:</strong> Tanay Soman</p>
+      <p><strong>PRN:</strong> YOUR_PRN</p>
+      <p><strong>Branch:</strong> AIML</p>
+      <p><strong>College:</strong> SIT Nagpur</p>
+    </div>
+    <div id="message" class="welcome"></div>
+    <button onclick="alert('Welcome Tanay Soman! Have a great day.')">Show Greeting</button>
+  </div>
+  <script>
+    document.getElementById('message').textContent = 'Welcome to the JavaScript Demonstration Page!';
+    console.log('Log: User Information Page Loaded');
+    console.info('Info: Welcome message displayed');
+    console.warn('Warning: This is a demo page');
+    console.error('Error: Sample error message');
+    console.table([{ Name: 'Tanay Soman', PRN: 'YOUR_PRN', Branch: 'AIML', College: 'SIT Nagpur' }]);
+  </script>
+</body>
+</html>

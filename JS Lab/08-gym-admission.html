@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym Admission Form</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; }
+    form { max-width: 400px; margin: auto; }
+    input { width: 100%; padding: 8px; margin: 5px 0; box-sizing: border-box; }
+    .error { color: red; font-size: 14px; display: block; }
+    .success { color: green; font-size: 14px; display: block; }
+    button { padding: 10px 15px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h2 style="text-align:center">Gym Admission Form</h2>
+  <form id="gymForm">
+    <label>Full Name:</label><input type="text" id="name"><span id="nameMsg" class="error"></span>
+    <label>Email:</label><input type="email" id="email"><span id="emailMsg" class="error"></span>
+    <label>Phone Number:</label><input type="text" id="phone"><span id="phoneMsg" class="error"></span>
+    <label>Age:</label><input type="number" id="age"><span id="ageMsg" class="error"></span>
+    <button type="submit">Submit</button>
+  </form>
+  <script>
+    const checks = {
+      name: [value => value.length >= 3, 'Name must contain at least 3 characters', 'Valid Name'],
+      email: [value => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value), 'Enter a valid email', 'Valid Email'],
+      phone: [value => /^\d{10}$/.test(value), 'Phone number must contain 10 digits', 'Valid Phone Number'],
+      age: [value => Number(value) >= 16, 'Minimum age for admission is 16', 'Eligible for Admission']
+    };
+    Object.keys(checks).forEach(id => document.getElementById(id).addEventListener('input', function () {
+      const [isValid, invalidMessage, validMessage] = checks[id];
+      const message = document.getElementById(`${id}Msg`);
+      message.textContent = isValid(this.value) ? validMessage : invalidMessage;
+      message.className = isValid(this.value) ? 'success' : 'error';
+    }));
+    document.getElementById('gymForm').addEventListener('submit', function (event) {
+      const valid = Object.keys(checks).every(id => checks[id][0](document.getElementById(id).value));
+      if (!valid) { alert('Please enter valid details.'); event.preventDefault(); }
+      else { event.preventDefault(); alert('Gym Admission Form Submitted Successfully!'); }
+    });
+  </script>
+</body>
+</html>

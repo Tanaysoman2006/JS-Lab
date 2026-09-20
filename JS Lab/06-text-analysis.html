@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Validation and Text Analysis</title>
+</head>
+<body>
+  <h2>Email Validation, Data Extraction &amp; Text Analysis</h2>
+  <label>Email:</label>
+  <input type="text" id="email" placeholder="Enter Email">
+  <button onclick="validateEmail()">Validate</button>
+  <br><br>
+  <label>Text:</label><br>
+  <textarea id="text" rows="5" cols="40" placeholder="Enter text containing phone numbers"></textarea>
+  <br><br>
+  <button onclick="analyzeText()">Analyze Text</button>
+  <div id="result"></div>
+  <script>
+    function validateEmail() {
+      let email = document.getElementById('email').value;
+      let emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+      document.getElementById('result').innerHTML = `<p>${emailRegex.test(email) ? 'Valid Email Address' : 'Invalid Email Address'}</p>`;
+    }
+    function analyzeText() {
+      let text = document.getElementById('text').value;
+      let charCount = text.length;
+      let words = text.trim().split(/\s+/);
+      let wordCount = text.trim() ? words.length : 0;
+      let phoneNumbers = text.match(/\b\d{10}\b/g) || [];
+      document.getElementById('result').innerHTML = `<p>Characters: ${charCount}</p><p>Words: ${wordCount}</p><p>Phone Numbers Found: ${phoneNumbers.join(', ') || 'None'}</p>`;
+    }
+  </script>
+</body>
+</html>

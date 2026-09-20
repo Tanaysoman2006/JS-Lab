@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Preference Manager</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; margin-top: 100px; transition: .3s; }
+    .dark { background: black; color: white; }
+    .light { background: white; color: black; }
+    button { padding: 10px 20px; margin: 10px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h2>User Preference Manager</h2>
+  <p>Select a Theme:</p>
+  <button onclick="setTheme('light')">Light Theme</button>
+  <button onclick="setTheme('dark')">Dark Theme</button>
+  <p id="sessionInfo"></p>
+  <script>
+    window.onload = function () {
+      let savedTheme = localStorage.getItem('theme');
+      if (savedTheme) document.body.className = savedTheme;
+      let visitCount = sessionStorage.getItem('visits');
+      visitCount = visitCount ? parseInt(visitCount, 10) + 1 : 1;
+      sessionStorage.setItem('visits', visitCount);
+      document.getElementById('sessionInfo').textContent = `Page Visits in Current Session: ${visitCount}`;
+    };
+    function setTheme(theme) { document.body.className = theme; localStorage.setItem('theme', theme); }
+  </script>
+</body>
+</html>

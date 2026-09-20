@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Palindrome Checker</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+    .container { width: min(400px, calc(100% - 60px)); background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,.2); text-align: center; }
+    input { width: 90%; padding: 10px; margin: 10px 0; }
+    button { padding: 10px 20px; background: #007bff; color: white; border: 0; border-radius: 5px; cursor: pointer; }
+    #result { margin-top: 20px; font-size: 20px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Palindrome Checker</h2>
+    <input type="text" id="word" placeholder="Enter a word">
+    <button onclick="checkWord()">Check</button>
+    <div id="result"></div>
+  </div>
+  <script>
+    function createCounter() { let count = 0; return function () { count++; return count; }; }
+    const counter = createCounter();
+    function isPalindrome(str) { return str === str.split('').reverse().join(''); }
+    const cleanString = str => str.toLowerCase().replace(/\s/g, '');
+    function checkWord() {
+      try {
+        let word = document.getElementById('word').value;
+        if (word.trim() === '') throw new Error('Please enter a word.');
+        let cleanedWord = cleanString(word);
+        let result = isPalindrome(cleanedWord);
+        let attempts = counter();
+        document.getElementById('result').innerHTML = result ? `"${word}" is a Palindrome<br>Checked ${attempts} time(s)` : `"${word}" is Not a Palindrome<br>Checked ${attempts} time(s)`;
+      } catch (error) {
+        document.getElementById('result').innerHTML = `<span style="color:red">${error.message}</span>`;
+      }
+    }
+  </script>
+</body>
+</html>

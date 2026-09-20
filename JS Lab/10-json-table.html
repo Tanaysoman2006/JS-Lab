@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON Table: fetch vs $.getJSON</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 32px auto; max-width: 900px; padding: 0 20px; background: #fbfaf7; color: #1c1c1e; }
+    button { padding: 8px 14px; margin-right: 8px; cursor: pointer; }
+    #status { min-height: 24px; margin: 15px 0; }
+    table { width: 100%; border-collapse: collapse; background: white; }
+    th, td { border: 1px solid #d8d5cc; padding: 10px; text-align: left; }
+    th { background: #e7efec; }
+  </style>
+</head>
+<body>
+  <h1>Loading JSON two ways</h1>
+  <p>Load the same public dataset with native <code>fetch()</code> or jQuery <code>$.getJSON()</code>.</p>
+  <button id="btn-fetch">Load with fetch()</button>
+  <button id="btn-jquery">Load with $.getJSON()</button>
+  <div id="status"></div>
+  <table>
+    <thead><tr><th>Name</th><th>Username</th><th>Email</th><th>City</th><th>Company</th></tr></thead>
+    <tbody id="results"><tr><td colspan="5">No data loaded yet.</td></tr></tbody>
+  </table>
+  <script>
+    const API_URL = 'https://jsonplaceholder.typicode.com/users';
+    const $tbody = $('#results');
+    function renderRows(users) {
+      $tbody.empty();
+      users.forEach(user => $tbody.append($('<tr>').append($('<td>').text(user.name), $('<td>').text(`@${user.username}`), $('<td>').text(user.email), $('<td>').text(user.address?.city || '-'), $('<td>').text(user.company?.name || '-')));
+    }
+    $('#btn-fetch').on('click', async function () {
+      $('#status').text('Loading with fetch()...');
+      try { const response = await fetch(API_URL); if (!response.ok) throw new Error(`HTTP ${response.status}`); const users = await response.json(); renderRows(users); $('#status').text(`Loaded ${users.length} records via fetch().`); }
+      catch (error) { $('#status').text(`Error: ${error.message}`); }
+    });
+    $('#btn-jquery').on('click', function () {
+      $('#status').text('Loading with $.getJSON()...');
+      $.getJSON(API_URL).done(users => { renderRows(users); $('#status').text(`Loaded ${users.length} records via $.getJSON().`); }).fail((_, textStatus) => $('#status').text(`Error: ${textStatus}`));
+    });
+  </script>
+</body>
+</html>

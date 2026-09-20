@@ -1,0 +1,230 @@
+[
+  {
+    "id": "prod-1",
+    "title": "AuraSound Apex Pro Wireless Headphones",
+    "category": "Audio",
+    "price": 249.99,
+    "originalPrice": 299.99,
+    "rating": 4.9,
+    "reviewsCount": 428,
+    "badge": "Best Seller",
+    "stock": 18,
+    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+    "description": "Studio-grade active noise cancellation with 40-hour battery life, ultra-plush memory foam earcups, and spatial audio with dynamic head tracking.",
+    "features": [
+      "Hybrid Active Noise Cancellation (40dB reduction)",
+      "40-hour battery life with fast 10-min USB-C quick charge",
+      "Spatial audio with dynamic head tracking",
+      "Custom 45mm neodymium drivers for crystalline highs and deep bass"
+    ]
+  },
+  {
+    "id": "prod-2",
+    "title": "Horizon Chrono X Smartwatch",
+    "category": "Wearables",
+    "price": 189.99,
+    "originalPrice": 229.99,
+    "rating": 4.8,
+    "reviewsCount": 312,
+    "badge": "Trending",
+    "stock": 14,
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80",
+    "description": "Aerospace-grade titanium chassis with an Always-On AMOLED display, ECG monitoring, sleep staging analysis, and 14-day battery endurance.",
+    "features": [
+      "1.43-inch HD AMOLED 1000-nit peak brightness display",
+      "Continuous heart rate, SpO2, and ECG tracking",
+      "5ATM water resistance suitable for open-water swimming",
+      "Built-in dual-frequency GPS with turn-by-turn navigation"
+    ]
+  },
+  {
+    "id": "prod-3",
+    "title": "Lumix Minimalist Mechanical Keyboard",
+    "category": "Electronics",
+    "price": 129.50,
+    "originalPrice": 149.99,
+    "rating": 4.7,
+    "reviewsCount": 189,
+    "badge": "Popular",
+    "stock": 25,
+    "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=800&q=80",
+    "description": "Hot-swappable custom linear switches, CNC machined anodized aluminum frame, per-key RGB backlighting, and triple-mode wireless connectivity.",
+    "features": [
+      "Gateron Pro Yellow pre-lubed mechanical switches",
+      "Sound-dampening silicon gasket mount structure",
+      "Tri-mode connectivity: Bluetooth 5.2, 2.4GHz, and USB-C",
+      "Durable PBT double-shot shine-through keycaps"
+    ]
+  },
+  {
+    "id": "prod-4",
+    "title": "Zenith Ergonomic Wireless Mouse",
+    "category": "Electronics",
+    "price": 69.99,
+    "originalPrice": 89.99,
+    "rating": 4.6,
+    "reviewsCount": 145,
+    "badge": "Sale",
+    "stock": 30,
+    "image": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&w=800&q=80",
+    "description": "Designed for maximum natural posture to relieve wrist tension during long productive sessions. Features infinite magnetic scroll and 26,000 DPI sensor.",
+    "features": [
+      "57-degree natural handshake ergonomic angle",
+      "MagSpeed electromagnetic scroll wheel with hyper-fast mode",
+      "26,000 DPI optical sensor tracking on glass",
+      "Multi-device pairing with cross-computer drag and drop"
+    ]
+  },
+  {
+    "id": "prod-5",
+    "title": "PulsePod True Wireless ANC Earbuds",
+    "category": "Audio",
+    "price": 119.00,
+    "originalPrice": 139.00,
+    "rating": 4.8,
+    "reviewsCount": 264,
+    "badge": "Hot",
+    "stock": 22,
+    "image": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=800&q=80",
+    "description": "Pocket-sized acoustic perfection with intelligent wind noise cancellation, wireless charging pod, and IPX7 water protection.",
+    "features": [
+      "Smart adaptive noise cancellation with transparent mode",
+      "6-mic array for crystal-clear telephone and meeting calls",
+      "Qi-certified wireless charging and USB-C rapid charge",
+      "Total 32 hours playback with carrying case"
+    ]
+  },
+  {
+    "id": "prod-6",
+    "title": "Orbit Ambient Smart Desk Lamp",
+    "category": "Smart Home",
+    "price": 89.95,
+    "originalPrice": 109.95,
+    "rating": 4.7,
+    "reviewsCount": 98,
+    "badge": "Design Award",
+    "stock": 16,
+    "image": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=80",
+    "description": "Circadian rhythm auto-tuning smart desk lamp with touchless gesture controls, Qi wireless charging base, and stepless color temperature adjustment.",
+    "features": [
+      "Smart circadian rhythm synchronization with daylight",
+      "15W built-in Qi wireless smartphone charging pad",
+      "Ra95 high color rendering index for reduced eye strain",
+      "Compatible with Alexa, Google Home, and Apple HomeKit"
+    ]
+  },
+  {
+    "id": "prod-7",
+    "title": "Vantage Ultra-Wide 4K Gaming Monitor",
+    "category": "Electronics",
+    "price": 599.99,
+    "originalPrice": 699.99,
+    "rating": 4.9,
+    "reviewsCount": 112,
+    "badge": "Premium",
+    "stock": 8,
+    "image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=800&q=80",
+    "description": "34-inch curved QD-OLED display boasting 175Hz refresh rate, 0.03ms response time, and 99.3% DCI-P3 cinematic color reproduction.",
+    "features": [
+      "34-inch 1800R curved QD-OLED panel with infinite contrast",
+      "175Hz refresh rate with AMD FreeSync Premium Pro",
+      "USB-C 90W Power Delivery and integrated KVM switch",
+      "Factory calibrated with Delta E < 2 color accuracy"
+    ]
+  },
+  {
+    "id": "prod-8",
+    "title": "EchoSphere Hi-Fi Smart Speaker",
+    "category": "Audio",
+    "price": 159.00,
+    "originalPrice": 179.00,
+    "rating": 4.6,
+    "reviewsCount": 87,
+    "badge": "Staff Pick",
+    "stock": 19,
+    "image": "https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=800&q=80",
+    "description": "360-degree omnidirectional acoustic driver, room-sensing acoustic calibration, woven acoustic fabric, and lossless streaming support.",
+    "features": [
+      "True 360-degree room-filling room acoustic tuning",
+      "Apple AirPlay 2, Spotify Connect, and Tidal Hi-Fi support",
+      "Far-field quad microphones for voice assistant commands",
+      "Stereo pairable with a second unit for cinema-grade sound"
+    ]
+  },
+  {
+    "id": "prod-9",
+    "title": "AeroFit GPS Fitness Tracker Ring",
+    "category": "Wearables",
+    "price": 219.00,
+    "originalPrice": 249.00,
+    "rating": 4.7,
+    "reviewsCount": 156,
+    "badge": "New Arrival",
+    "stock": 12,
+    "image": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=80",
+    "description": "Subtle smart health tracking ring crafted from medical-grade polished ceramic and titanium. Measures recovery, readiness, HRV, and core body temperature.",
+    "features": [
+      "Weightless 4-gram titanium unibody design",
+      "Daily Readiness, Sleep Architecture, and HRV tracking",
+      "7-day battery life with inductive wireless charging dock",
+      "Water resistant to 100 meters (swim & sauna safe)"
+    ]
+  },
+  {
+    "id": "prod-10",
+    "title": "Aether Carbon Fiber Backpack",
+    "category": "Accessories",
+    "price": 139.95,
+    "originalPrice": 169.95,
+    "rating": 4.8,
+    "reviewsCount": 204,
+    "badge": "Top Rated",
+    "stock": 28,
+    "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80",
+    "description": "Weatherproof 1000D Cordura and carbon fiber composite backpack with TSA-approved 16-inch laptop pocket, hidden passport pouch, and magnetic fidlock buckles.",
+    "features": [
+      "Waterproof YKK AquaGuard zippers throughout",
+      "Dedicated padded compartment fits up to 16\" MacBook Pro",
+      "Luggage handle pass-through strap for effortless travel",
+      "Integrated USB-C external charging port"
+    ]
+  },
+  {
+    "id": "prod-11",
+    "title": "Komorebi Wood & Leather Desk Pad",
+    "category": "Accessories",
+    "price": 49.00,
+    "originalPrice": 59.00,
+    "rating": 4.9,
+    "reviewsCount": 341,
+    "badge": "Popular",
+    "stock": 40,
+    "image": "https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&w=800&q=80",
+    "description": "Full-grain vegetable-tanned top layer paired with natural non-slip cork base. Adds warmth and organization to any workspace.",
+    "features": [
+      "Premium waterproof & scratch-resistant surface",
+      "Natural Portuguese organic cork anti-slip underside",
+      "Generous 90cm x 40cm surface area for mouse and keyboard",
+      "Includes magnetic cable holder and matching coasters"
+    ]
+  },
+  {
+    "id": "prod-12",
+    "title": "Helios Smart Wi-Fi Air Purifier Pro",
+    "category": "Smart Home",
+    "price": 279.00,
+    "originalPrice": 329.00,
+    "rating": 4.8,
+    "reviewsCount": 178,
+    "badge": "Eco Choice",
+    "stock": 10,
+    "image": "https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&w=800&q=80",
+    "description": "Medical-grade True HEPA H13 filtration capturing 99.97% of airborne micro-particles. Whisper-quiet 22dB sleep mode and mobile app control.",
+    "features": [
+      "True HEPA H13 plus activated carbon odor absorption filter",
+      "Cleans a 500 sq ft room in only 12 minutes (CADR 400 m³/h)",
+      "Real-time laser PM2.5 air quality display ring",
+      "iOS and Android app with filter lifetime tracking"
+    ]
+  }
+]

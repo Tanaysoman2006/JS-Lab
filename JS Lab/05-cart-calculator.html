@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart Total Calculator</title>
+</head>
+<body>
+  <h2>Cart Total Calculator</h2>
+  <button onclick="calculateCart()">Calculate Total</button>
+  <div id="result"></div>
+  <script>
+    function calculateCart() {
+      const cart = [
+        { name: 'Laptop', price: 50000, quantity: 1 },
+        { name: 'Mouse', price: 1000, quantity: 2 },
+        { name: 'Keyboard', price: 2000, quantity: 1 }
+      ];
+      let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+      let discount = 0;
+      if (total >= 50000) discount = total * 0.15;
+      else if (total >= 20000) discount = total * 0.10;
+      else if (total >= 5000) discount = total * 0.05;
+      let finalAmount = total - discount;
+      document.getElementById('result').innerHTML = `<p>Total Amount: Rs. ${total}</p><p>Discount: Rs. ${discount}</p><p><strong>Final Amount: Rs. ${finalAmount}</strong></p>`;
+    }
+  </script>
+</body>
+</html>

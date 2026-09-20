@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Billing Calculator</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+    .container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,.2); width: min(400px, calc(100% - 60px)); }
+    h2 { text-align: center; color: #333; }
+    input, button { width: 100%; padding: 10px; margin: 8px 0; box-sizing: border-box; }
+    button { background: #007bff; color: white; border: 0; border-radius: 5px; cursor: pointer; }
+    #result { margin-top: 20px; padding: 10px; background: #eef; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Billing Calculator</h2>
+    <input type="text" id="customer" placeholder="Enter Customer Name">
+    <input type="number" id="quantity" placeholder="Enter Quantity">
+    <input type="number" id="price" placeholder="Enter Price per Item">
+    <button onclick="generateBill()">Generate Bill</button>
+    <div id="result"></div>
+  </div>
+  <script>
+    function generateBill() {
+      var customerName = document.getElementById('customer').value;
+      let quantity = Number(document.getElementById('quantity').value);
+      const price = Number(document.getElementById('price').value);
+      let total = quantity * price;
+      let gst = total * 0.18;
+      let finalAmount = total + gst;
+      const bill = { name: customerName, qty: quantity, rate: price };
+      const { name, qty, rate } = bill;
+      document.getElementById('result').innerHTML = `<h3>Bill Details</h3><p><strong>Customer:</strong> ${name}</p><p><strong>Quantity:</strong> ${qty}</p><p><strong>Price:</strong> Rs. ${rate}</p><p><strong>Total:</strong> Rs. ${total}</p><p><strong>GST (18%):</strong> Rs. ${gst.toFixed(2)}</p><h3>Final Amount: Rs. ${finalAmount.toFixed(2)}</h3>`;
+      console.log(`Customer: ${name}`);
+      console.log(`Final Amount: Rs. ${finalAmount.toFixed(2)}`);
+    }
+  </script>
+</body>
+</html>
